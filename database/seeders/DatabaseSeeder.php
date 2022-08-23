@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Event;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -20,5 +21,9 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+
+        Event::factory()->create(['title' => 'Scrum Webinar', 'description' => 'Learn by doing with our scrum game', 'img' => 'url', 'spaces' => 12, 'event_date' => '2022-09-09']);
+        Event::factory()->create(['title' => 'JS Webinar', 'description' => 'Learn by doing with our JS game', 'img' => 'url', 'spaces' => 14, 'event_date' => '2022-11-09']);
+        Event::factory(30)->create();
     }
 }
