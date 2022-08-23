@@ -16,7 +16,7 @@ class CrudTest extends TestCase
      */
 
     use RefreshDatabase;
-    public function test_read_crud()
+    public function test_list_event_appear_in_homepage()
     {
         $this->withExceptionHandling();
 
