@@ -28,4 +28,13 @@ class CrudTest extends TestCase
             ->assertViewIs('home');
         $response->assertSee($event->name);
     }
+    public function an_event_can_be_deleted()
+    {
+        $this->withExceptionHandling();
+
+        $event = Event::factory()->create();
+        $this->assertCount(1,Event::all());
+        $response = $this->delete(route('delete',$event->id));
+        $this->assertCount(0,Event::all());
+    }
 }
