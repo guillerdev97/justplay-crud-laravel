@@ -3,7 +3,7 @@
 @section('content')
 
 @foreach ($events as $event)
-<p>{{ $event->name }}</p>
+<p>{{ $event->title }}</p>
 <p>{{ $event->description }}</p>
 <p>{{ $event->img }}</p>
 <p>{{ $event->spaces }}</p>
