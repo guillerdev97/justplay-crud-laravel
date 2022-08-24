@@ -3,8 +3,9 @@
 @section('content')
 
 <a href="{{ route('createEvent') }}"><button>Add new event</button></a>
+<div class="grid md:grid-cols-3 justify-items-center">
 @foreach ($events as $event)
-<div class="g-col-2 max-w-sm m-4 bg-white rounded-lg border border-gray-200 shadow-md  dark:border-gray-700">
+<div class="max-w-xs m-4 bg-white rounded-lg border border-gray-200 shadow-md  dark:border-gray-700">
     <div class="relative"> 
       <button class="absolute m-2" type="button">
         <img src="{{ asset('img/information.png') }}" alt="information" width="30" height="30">
@@ -38,6 +39,7 @@
     </div>
 </div>
 @endforeach
+</div>
 
 
 @endsection
