@@ -31,6 +31,8 @@ class EventsController extends Controller
     public function create()
     {
         //
+
+        return view('create');
     }
 
     /**
@@ -42,6 +44,12 @@ class EventsController extends Controller
     public function store(Request $request)
     {
         //
+
+        $event = request()->except('_token');
+
+        Event::create($event);
+
+        return redirect()->route('home');
     }
 
     /**

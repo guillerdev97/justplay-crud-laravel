@@ -2,6 +2,7 @@
 
 @section('content')
 
+<a href="{{ route('createEvent') }}"><button>Add new event</button></a>
 @foreach ($events as $event)
 <p>{{ $event->title }}</p>
 <p>{{ $event->description }}</p>
@@ -21,3 +22,4 @@
 @endforeach
 
 @endsection
+
