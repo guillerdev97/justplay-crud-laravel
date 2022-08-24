@@ -28,4 +28,19 @@ class CrudTest extends TestCase
             ->assertViewIs('home');
         $response->assertSee($event->name);
     }
+
+    public function test_create()
+    {
+        $this->withExceptionHandling();
+
+        $response = $this->post(route('storeEvent', [
+            'title' => 'title',
+            'description' => 'description',
+            'img' => 'img',
+            'spaces' => 'spaces',
+            'event_date' => 'event_date'
+        ]));
+
+        $this->assertCount(1, Event::all());
+    }
 }
