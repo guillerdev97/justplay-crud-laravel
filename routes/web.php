@@ -19,4 +19,10 @@ use Illuminate\Support\Facades\Auth;
 Auth::routes();
 
 Route::get('/', [EventsController::class, 'index'])->name('home');
+
 Route::delete('/delete/{id}', [EventsController::class, 'destroy'])->name('delete');
+
+// create
+Route::get('/create', [EventsController::class, 'create'])->name('createEvent');
+Route::post('/', [EventsController::class, 'store'])->name('storeEvent');
+
