@@ -1,0 +1,1 @@
+This v1.0 is read and delete of crud
