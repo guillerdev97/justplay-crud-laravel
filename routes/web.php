@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\EventsController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,3 +19,4 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/', [EventsController::class, 'index'])->name('home');
+Route::delete('/delete/{id}', [EventsController::class, 'destroy'])->name('delete');
