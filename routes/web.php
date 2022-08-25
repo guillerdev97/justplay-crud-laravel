@@ -32,3 +32,5 @@ Route::post('/', [EventsController::class, 'store'])->name('storeEvent');
 Route::get('/edit/{id}', [EventsController::class, 'edit'])->name('editEvent');
 Route::patch('/update/{id}', [EventsController::class, 'update'])->name('updateEvent');
 
+// show
+Route::get('/show/{id}', [EventsController::class, 'show'])->name('showEvent');

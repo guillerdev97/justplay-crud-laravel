@@ -7,9 +7,11 @@
 @foreach ($events as $event)
 <div class="max-w-xs m-4 bg-white rounded-lg border border-gray-200 shadow-md  dark:border-gray-700">
     <div class="relative"> 
+      <a href="{{ route('showEvent', $event->id) }}">
       <button class="absolute m-2" type="button">
         <img src="{{ asset('img/information.png') }}" alt="information" width="30" height="30">
       </button>
+      </a>
       <a href="#">
         <img class="rounded-t-lg" src="{{ $event->img }}" alt="" />
       </a>
