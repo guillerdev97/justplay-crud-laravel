@@ -12,11 +12,12 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
+  
     <!-- Scripts -->
     <script src="https://cdn.tailwindcss.com"></script>
+   
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/base.css')}}">
+   
 </head>
 <body>
     <div id="app">
