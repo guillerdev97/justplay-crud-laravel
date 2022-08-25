@@ -1,7 +1,7 @@
 @extends('layouts.app')
 <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css')}}">
 
-@section()('title', 'EVENT DETAIL')
+@section('title', 'EVENT DETAIL')
 
 @section('content')
 
