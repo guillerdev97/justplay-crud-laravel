@@ -11,7 +11,7 @@
         <img src="{{ asset('img/information.png') }}" alt="information" width="30" height="30">
       </button>
       <a href="#">
-        <img class="rounded-t-lg" src="{{ asset('img/senderismo.jpg') }}" alt="" />
+        <img class="rounded-t-lg" src="{{ $event->img }}" alt="" />
       </a>
     </div> 
     <div class="p-3">
@@ -24,9 +24,12 @@
           <a href="#" class="me-auto items-center py-2 px-3 ml-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
               Subscribe
           </a>
+          <a href="{{ route('editEvent', ['id' => $event->id])}}">
           <button type="button" class="focus:outline-none  bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-3 py-2.5 mr-2 dark:bg-green-800 dark:hover:bg-blue-700 dark:focus:ring-green-800">
             <img src="{{ asset('img/edit.png') }}" alt="edit event" width="16" height="16">
           </button>
+          </a>
+
           <form action="{{ route('delete', ['id' => $event->id]) }}" method="POST">
             @method('delete')
             @csrf
