@@ -1,9 +1,9 @@
 @extends('layouts.app')
-
+<!-- <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css')}}"> -->
 @section('content')
 
-<a href="{{ route('createEvent') }}"><button>Add new event</button></a>
-<div class="grid md:grid-cols-3 justify-items-center">
+<a href="{{ route('createEvent') }}"><button class="btn btn-primary" >Add new event</button></a>
+<div id="box" class="grid md:grid-cols-3 justify-items-center">
 @foreach ($events as $event)
 <div class="max-w-xs m-4 bg-white rounded-lg border border-gray-200 shadow-md  dark:border-gray-700">
     <div class="relative"> 
@@ -45,6 +45,5 @@
 </div>
 @endforeach
 </div>
-
 
 @endsection
