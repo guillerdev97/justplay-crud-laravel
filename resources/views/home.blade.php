@@ -11,7 +11,7 @@
         <img src="{{ asset('img/information.png') }}" alt="information" width="30" height="30">
       </button>
       <a href="#">
-        <img class="rounded-t-lg" src="{{ asset('img/senderismo.jpg') }}" alt="" />
+        <img class="rounded-t-lg" src="{{ $event->img }}" alt="" />
       </a>
     </div> 
     <div class="p-3">
