@@ -2,42 +2,53 @@
 
 @section('content')
 
-<h2 class="cardTitle">Create a new event</h2>
-<form class="justify-content-center" action="{{ route('storeEvent') }}" method="post">
+<section>
+<form action="{{ route('storeEvent') }}" method="post">
     @csrf
-    <div class="input-group mb-3">
-        <span class="input-group-text" id="inputGroup-sizing-default">Title</span>
-        <input type="text" name="title"  class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+    <div class="left">
+        <div>
+            <label for="title">Event name</label><br>
+            <input type="text" name="title" id="title">
+        </div>
+
+        <div>
+            <label for="event_date">Event date</label><br>
+            <input type="text" name="event_date" id="event_date">
+        </div>
+
+        <div>
+            <label for="description">Event description</label><br>
+            <textarea name="description" id="description" class="textarea"></textarea>
+        </div>
     </div>
 
-    <div class="input-group mb-3">
-        <span class="input-group-text" id="inputGroup-sizing-default">Description</span>
-        <input type="text" name="description" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-    </div>
+    <div class="right">
+        <div>
+            <label for="">Insert image 📷</label><br>
+            <input type="text" name="img" id="img">
+        </div>
 
-    <div class="input-group mb-3">
-        <span class="input-group-text" id="inputGroup-sizing-default">Image</span>
-        <input class="form-control" type="text" name="img">
-    </div>
+        <img src="https://mejorconsalud.as.com/wp-content/uploads/2018/06/saludo-sol-yoga.jpg" alt="">
 
-    <div class="input-group mb-3">
-        <span class="input-group-text" id="inputGroup-sizing-default">Spaces</span>
-        <input class="form-control" type="text" name="spaces">
-    </div>
+        <div>
+            <label for="">Spaces</label>
+            <input type="text" name="spaces" class="spaces">
+        </div>
 
-    <div class="input-group mb-3">
-        <span class="input-group-text" id="inputGroup-sizing-default">Date</span>
-        <input class="form-control" type="text" name="event_date">
-    </div>
+        <div class="buttons">
+            <div>
+                <a href="{{ route('home') }}">Cancel</a>
+            </div>
 
-    <div class="float-right">
-        <a class="btn btn-primary" href="{{ route('home') }}">Cancel</a>
-    </div>
+            <div>
+                <input type="reset" value="Reset">
+            </div>
 
-    <div class="btnCreate">
-        <button type="submit" class="btn btn-outline-success">Create</button>
-    </div>
+            <div>
+                <button type="submit">Create</button>
+            </div>
+        </div>
 </form>
-
+</section>
 
 @endsection

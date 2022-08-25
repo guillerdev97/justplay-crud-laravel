@@ -1,0 +1,115 @@
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 70vh;
+
+    border: 1px solid black;
+}
+
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 60vh;
+
+    border: 1px solid black;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 55%;
+    height: 60vh;
+
+    border: 1px solid black;
+}
+.left div {
+    width: 80%;
+    height: 16vh;
+    margin-left: 10px;
+
+
+    border: 1px solid black;
+}
+.left div label {
+    font-size: 24px;
+    letter-spacing: 1px;
+}
+
+.left div input {
+    width: 70%;
+    height: 5vh;
+    margin-top: 4px;
+    padding: 3px 5px;
+    background-color: rgb(243, 243, 243);
+    border: 1px solid black;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all .2s ease;
+}
+.left div input:hover {
+    background-color: rgb(220, 220, 220);
+}
+.left div input:focus {
+    outline: none;
+}
+.textarea {
+    width: 70%;
+    height: 10vh;
+    padding: 3px 5px;
+    background-color: rgb(243, 243, 243);
+    border: 1px solid black;
+    border-radius: 8px;
+    transition: all .2s ease;
+}
+.textarea:hover {
+    background-color: rgb(220, 220, 220);
+}
+.textarea:focus {
+    outline: none;
+}
+
+
+.right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 35%;
+    height: 60vh;
+
+    border: 1px solid black;
+}
+.right div input {
+    width: 80%;
+    height: 5vh;
+    padding: 3px 5px;
+    background-color: rgb(243, 243, 243);
+    border: 1px solid black;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all .2s ease;
+}
+.right div input:hover {
+    background-color: rgb(220, 220, 220);
+}
+.right div input:focus {
+    outline: none;
+}
+img {
+    width: 20%;
+    height: 10vh;
+    
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

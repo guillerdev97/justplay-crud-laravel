@@ -38,6 +38,14 @@
         </div>
     </div>
 </div>
+<form action="{{ route('delete', ['id' => $event->id]) }}" method="POST">
+    @method('delete')
+    @csrf
+
+    <button type="submit" onclick="return confirm('Are you sure you want to delete this event? {{ $event->title }}')">Delete</button>
+    </button>
+</form>
+
 @endforeach
 </div>
 
