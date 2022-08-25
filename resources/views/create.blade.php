@@ -25,7 +25,7 @@
         <div class="right">
             <div class="imageBox">
                 <label for="">Insert image 📷</label><br>
-                <input type="text" name="img" id="img">
+                <input type="text" name="img" id="img" placeholder="Insert an url">
             </div>
 
             <img src="https://mejorconsalud.as.com/wp-content/uploads/2018/06/saludo-sol-yoga.jpg" alt="">
@@ -37,15 +37,15 @@
 
             <div class="buttons">
                 <div>
-                    <a href="{{ route('home') }}"><button class="btn btn-danger fs-4">Cancel</button></a>
+                    <a href="{{ route('home') }}"><button class="btn btn-danger fs-4" style="background-color: red;">Cancel</button></a>
                 </div>
 
                 <div>
-                    <button type="reset" class="btn btn-secondary fs-4">Reset</button>
+                    <button type="reset" class="btn btn-secondary fs-4" style="background-color: blue;">Reset</button>
                 </div>
 
                 <div>
-                    <button type="submit" class="btn btn-success fs-4">Create</button>
+                    <button type="submit" class="btn btn-success fs-4" style="background-color: green;">Create</button>
                 </div>
             </div>
     </form>
