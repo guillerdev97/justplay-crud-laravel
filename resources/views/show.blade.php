@@ -1,5 +1,8 @@
 @extends('layouts.app')
-<link rel="stylesheet" type="text/css" href="{{ asset('css/base.css')}}">
+<link rel="stylesheet" type="text/css" href="{{ asset('css/app.css')}}">
+
+@section()('title', 'EVENT DETAIL')
+
 @section('content')
 
 <section class="cardSection">
