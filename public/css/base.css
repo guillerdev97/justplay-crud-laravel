@@ -1,4 +1,5 @@
-@import url('create.css');
+@import url('createEdit.css');
+@import url('show.css');
 
 * {
     box-sizing: border-box;
