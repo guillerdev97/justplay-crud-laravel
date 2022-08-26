@@ -20,9 +20,8 @@ Auth::routes();
 
 Route::get('/', [EventsController::class, 'index'])->name('home');
 
+// delete
 Route::delete('/delete/{id}', [EventsController::class, 'destroy'])->name('delete');
-
-
 
 // create
 Route::get('/create', [EventsController::class, 'create'])->name('createEvent');
