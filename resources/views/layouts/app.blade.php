@@ -38,7 +38,7 @@
                     <ul class="navbar-nav me-auto text-white">
                        
                     </ul>
-                    <h1 class="text-white fs-2">@yield('title', 'FIND YOUR SPORT EVENTS')</h1>
+                    <h1 class="text-white fs-2">@yield('title', 'FIND YOUR SPORT PARTNER')</h1>
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->

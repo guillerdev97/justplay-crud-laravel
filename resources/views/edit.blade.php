@@ -49,7 +49,7 @@
                 </div>
 
                 <div>
-                    <button type="submit" class="btn btn-success fs-4" style="background-color: green;">Create</button>
+                    <button type="submit" class="btn btn-success fs-4" style="background-color: green;">Update</button>
                 </div>
             </div>
     </form>
