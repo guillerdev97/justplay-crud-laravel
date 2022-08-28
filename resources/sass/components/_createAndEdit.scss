@@ -1,0 +1,150 @@
+#createEditForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    height: 72vh;
+    margin: 10px auto;
+
+    .leftSide {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        width:55%;
+        height: 68vh;
+
+        .problemBox {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+
+            #problemLabel {
+                margin-bottom: 32px;
+            }
+
+            #title {
+                font-size: 20px;
+                text-align: center;
+            }
+        }
+
+        div {
+            width: 85%;
+            height: 22vh;
+
+            label {
+                font-size: 24px;
+                letter-spacing: 1px;
+            }
+
+            input {
+                width: 75%;
+                height: 6vh;
+                margin-top: 4px;
+                padding: 4px 6px;
+                background-color: rgb(243, 243, 243);
+                border: 2px solid rgb(191, 191, 191);
+                font-size: 20px;
+                text-align: center;
+                transition: all .2s ease;
+            }
+
+            input:hover {
+                background-color: rgb(220, 220, 220);
+            }
+            input:focus {
+                outline: none;
+            }
+        }
+        
+        .textarea {
+            width: 75%;
+            height: 12vh;
+            padding: 3px 5px;
+            background-color: rgb(243, 243, 243);
+            border: 2px solid rgb(191, 191, 191) !important;
+            border-radius: 0 !important;
+            resize: none;
+            overflow: auto !important;
+            font-size: 20px;
+            transition: all .2s ease;
+        }
+        .textarea:hover {
+            background-color: rgb(220, 220, 220);
+        }
+        .textarea:focus {
+            outline: none;
+        }
+    }
+
+    .rightSide {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 40%;
+        height: 67vh;
+
+        .imageBox {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+            align-items: center;
+
+            label {
+                font-size: 23px;
+            }
+            input {
+                margin-top: 4px;
+            }
+        }
+
+        img {
+            width:65%;
+            height: 32vh;
+            border-radius: 5px;
+        }
+
+        div {
+            input {
+                width: 80%;
+                height: 6vh;
+                padding: 4px 6px;
+                background-color: rgb(243, 243, 243);
+                border: 2px solid rgb(191, 191, 191);
+                font-size: 20px;
+                transition: all .2s ease;
+            }
+            input:hover {
+                background-color: rgb(220, 220, 220);
+            }
+            input:focus {
+                outline: none;
+            }
+        }
+
+        .spaces {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 35%;
+
+            label {
+                font-size: 22px;
+            }
+            input {
+                width: 35% !important;
+                text-align: center;
+            }
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 90%;
+        }
+    }
+}
