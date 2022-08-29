@@ -17,7 +17,7 @@ class EventsController extends Controller
         //
 
         $events = Event::orderBy('event_date', 'DESC')
-            ->get();
+            ->paginate(6);
 
         /* var_dump($events); */
 

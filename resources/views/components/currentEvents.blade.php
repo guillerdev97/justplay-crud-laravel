@@ -53,3 +53,6 @@
 </div>
 @endforeach
 </div>
+<div class="d-flex justify-content-center align-items-center">
+  {!! $events->links() !!}
+</div>
