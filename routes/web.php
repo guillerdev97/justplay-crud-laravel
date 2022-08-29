@@ -18,6 +18,7 @@ Auth::routes();
 
 Route::get('/', [EventsController::class, 'index']);
 Route::get('/home', [EventsController::class, 'index'])->name('home');
+Route::get('/past', [EventsController::class, 'getPastEvents'])->name('pastEvents');
 
 // delete
 Route::delete('/delete/{id}', [EventsController::class, 'destroy'])->name('delete')->middleware('isadmin', 'auth');
