@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
   
     <!-- Scripts -->
-   
+    <script src="https://unpkg.com/flowbite@1.5.2/dist/flowbite.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- CSS only -->
    
