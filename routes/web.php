@@ -24,7 +24,7 @@ Route::delete('/delete/{id}', [EventsController::class, 'destroy'])->name('delet
 
 // create
 Route::get('/create', [EventsController::class, 'create'])->name('createEvent')->middleware('isadmin', 'auth');
-Route::post('/', [EventsController::class, 'store'])->name('storeEvent');
+Route::post('/', [EventsController::class, 'store'])->name('storeEvent')->middleware('isadmin', 'auth');
 
 //edit
 Route::get('/edit/{id}', [EventsController::class, 'edit'])->name('editEvent')->middleware('isadmin', 'auth');

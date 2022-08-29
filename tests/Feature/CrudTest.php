@@ -3,6 +3,7 @@
 namespace Tests\Feature;
 
 use App\Models\Event;
+use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
@@ -38,6 +39,14 @@ class CrudTest extends TestCase
 
         $event = Event::factory()->create();
         $this->assertCount(1, Event::all());
+
+        $userNoAdmin = User::factory()->create(['isAdmin'=>false]);
+        $this->actingAs($userNoAdmin);
+        $response = $this->delete(route('delete', $event->id));
+        $this->assertCount(1, Event::all());
+
+        $userAdmin = User::factory()->create(['isAdmin'=>true]);
+        $this->actingAs($userAdmin);
         $response = $this->delete(route('delete', $event->id));
         $this->assertCount(0, Event::all());
     }
@@ -47,6 +56,7 @@ class CrudTest extends TestCase
     {
         $this->withExceptionHandling();
 
+        $userAdmin = User::factory()->create(['isAdmin'=>true]);
         $response = $this->post(route('storeEvent', [
             'title' => 'title',
             'description' => 'description',
@@ -56,20 +66,42 @@ class CrudTest extends TestCase
         ]));
 
         $this->assertCount(1, Event::all());
+
+        $userNoAdmin = User::factory()->create(['isAdmin'=>false]);
+        $response = $this->post(route('storeEvent', [
+            'title' => 'title',
+            'description' => 'description',
+            'img' => 'img',
+            'spaces' => 'spaces',
+            'event_date' => 'event_date'
+        ]));
+
+        $this->assertCount(1, Event::all());
+
     }
+
 
     // edit test
     public function test_an_event_can_be_updated()
     {
         $this->withExceptionHandling();
 
+        
         $event = Event::factory()->create();
 
         $this->assertCount(1,Event::all());
-
+        $userAdmin = User::factory()->create(['isAdmin'=>true]);
+        $this->actingAs($userAdmin);
         $response = $this->patch(route('updateEvent', $event->id), ['title' => 'New Name']);
 
         $this->assertEquals('New Name', Event::first()->title);
+
+        $userNoAdmin = User::factory()->create(['isAdmin'=>false]);
+        $this->actingAs($userNoAdmin);
+        $response = $this->patch(route('updateEvent', $event->id), ['title' => 'New Name No Admin']);
+
+        $this->assertEquals('New Name', Event::first()->title);
     }
+    
     
 }
