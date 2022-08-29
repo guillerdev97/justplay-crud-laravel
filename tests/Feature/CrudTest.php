@@ -57,6 +57,7 @@ class CrudTest extends TestCase
         $this->withExceptionHandling();
 
         $userAdmin = User::factory()->create(['isAdmin'=>true]);
+        $this->actingAs($userAdmin);
         $response = $this->post(route('storeEvent', [
             'title' => 'title',
             'description' => 'description',
@@ -68,6 +69,7 @@ class CrudTest extends TestCase
         $this->assertCount(1, Event::all());
 
         $userNoAdmin = User::factory()->create(['isAdmin'=>false]);
+        $this->actingAs($userNoAdmin);
         $response = $this->post(route('storeEvent', [
             'title' => 'title',
             'description' => 'description',
