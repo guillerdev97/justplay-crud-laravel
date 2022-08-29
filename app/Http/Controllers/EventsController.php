@@ -16,7 +16,8 @@ class EventsController extends Controller
     {
         //
 
-        $events = Event::get();
+        $events = Event::orderBy('event_date', 'DESC')
+            ->get();
 
         /* var_dump($events); */
 
@@ -106,6 +107,22 @@ class EventsController extends Controller
     {
        Event::destroy($id);
        return redirect()->route('home');
+    }
+
+    // methods
+
+    public function getPastEvents() {
+        $events = Event::orderBy('event_date', 'DESC')
+            ->get();
+
+        $pastEvents = [];
+        foreach($events as $event) {
+            if($event->event_date < now()) {
+                array_push($pastEvents, $event);
+            }
+        }
+
+        return view('pastEvents', compact('pastEvents'));
     }
 
 }
