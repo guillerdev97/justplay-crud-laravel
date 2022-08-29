@@ -52,7 +52,7 @@ class CrudTest extends TestCase
     }
 
     // create test
-    public function test_create()
+    public function test_an_event_can_be_created()
     {
         $this->withExceptionHandling();
 
