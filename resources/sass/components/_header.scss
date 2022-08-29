@@ -1,0 +1,25 @@
+header {
+    display:flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    height: 15vh;
+    background-color: #DC1A22;
+    .left-header{
+        display:flex;
+    }
+    .right-header{
+        display:flex;
+        padding-right: 10px;
+    }
+    
+    
+}
+
+img{
+    padding-left: 10px;
+
+}
+
+
+
