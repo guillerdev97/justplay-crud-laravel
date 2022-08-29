@@ -14,22 +14,21 @@ use Illuminate\Support\Facades\Auth;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-
 Auth::routes();
 
-Route::get('/', [EventsController::class, 'index'])->name('home');
+Route::get('/', [EventsController::class, 'index']);
+Route::get('/home', [EventsController::class, 'index'])->name('home');
 
 // delete
-Route::delete('/delete/{id}', [EventsController::class, 'destroy'])->name('delete');
+Route::delete('/delete/{id}', [EventsController::class, 'destroy'])->name('delete')->middleware('isadmin', 'auth');
 
 // create
-Route::get('/create', [EventsController::class, 'create'])->name('createEvent');
+Route::get('/create', [EventsController::class, 'create'])->name('createEvent')->middleware('isadmin', 'auth');
 Route::post('/', [EventsController::class, 'store'])->name('storeEvent');
 
 //edit
-Route::get('/edit/{id}', [EventsController::class, 'edit'])->name('editEvent');
-Route::patch('/update/{id}', [EventsController::class, 'update'])->name('updateEvent');
+Route::get('/edit/{id}', [EventsController::class, 'edit'])->name('editEvent')->middleware('isadmin', 'auth');
+Route::patch('/update/{id}', [EventsController::class, 'update'])->name('updateEvent')->middleware('isadmin', 'auth');
 
 // show
 Route::get('/show/{id}', [EventsController::class, 'show'])->name('showEvent');

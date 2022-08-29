@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('img');
             $table->integer('spaces');
             $table->date('event_date'); 
+            
 
             $table->timestamps();
         });
