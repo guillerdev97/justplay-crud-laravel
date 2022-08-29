@@ -23,6 +23,7 @@
    
 </head>
 <body>
+    <x-header></x-header>
     <div id="app">
         <nav id="nav" class="navbar navbar-expand-md navbar-light bg-danger shadow-sm">
             <div class="container">
