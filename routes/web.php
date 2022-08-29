@@ -33,3 +33,6 @@ Route::patch('/update/{id}', [EventsController::class, 'update'])->name('updateE
 
 // show
 Route::get('/show/{id}', [EventsController::class, 'show'])->name('showEvent');
+
+/* Route::get('/inscribe/{id}', [App\Http\Controllers\EventsController::class, 'inscribe'])->middleware('auth')->name('inscribe');
+Route::get('/cancelInscription/{id}', [App\Http\Controllers\EventsController::class, 'cancelInscription'])->middleware('auth')->name('cancelInscription'); */

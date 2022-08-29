@@ -16,4 +16,9 @@ class Event extends Model
         'spaces',
         'event_date',
     ];
+
+   /*  public function user()
+    {
+        return $this->belongsToMany(User::class);
+    } */
 }
