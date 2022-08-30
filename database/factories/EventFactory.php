@@ -23,7 +23,7 @@ class EventFactory extends Factory
             'description' => $this->faker->realText(),
             'img' => $this->faker->imageUrl(),
             'spaces' => $this->faker->biasedNumberBetween($min = 10, $max = 30, $function = 'sqrt'),
-            'event_date' => $this->faker->date($format = 'Y-m-d', $max = 'now')
+            'event_date' => $this->faker->date($format = 'Y-m-d', $max = 'now'),
         ];
     }
 }
