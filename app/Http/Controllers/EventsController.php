@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+
+use App\Mail\InscriptionMailable;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\Event;
@@ -151,6 +154,10 @@ class EventsController extends Controller
         $event = Event::find($id);
 
         $user->event()->attach($event);
+
+       /*  $mail = new InscriptionMailable();
+        Mail::to('mailtrap@gmail.com')->send($mail); */
+      
 
         return redirect()->route('home');
     }
