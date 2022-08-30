@@ -17,8 +17,8 @@ class Event extends Model
         'event_date',
     ];
 
-   /*  public function user()
+    public function user()
     {
         return $this->belongsToMany(User::class);
-    } */
+    }
 }

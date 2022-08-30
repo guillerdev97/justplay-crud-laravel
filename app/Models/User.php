@@ -21,7 +21,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'isAdmin',
+        'isAdmin'
+
     ];
 
     /**
@@ -43,8 +44,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-  /*   public function event()
+    public function event()
     {
-        return $this->belongsToMany(Event::class);
-    } */
+        return $this->belongsToMany(Event::class); 
+    }
 }
