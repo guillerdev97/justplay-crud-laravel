@@ -19,6 +19,7 @@ Auth::routes();
 Route::get('/', [EventsController::class, 'index']);
 Route::get('/home', [EventsController::class, 'index'])->name('home');
 Route::get('/past', [EventsController::class, 'getPastEvents'])->name('pastEvents');
+Route::get('myevents', [EventsController::class, 'myEventsView'])->name('myEvents');
 
 // delete
 Route::delete('/delete/{id}', [EventsController::class, 'destroy'])->name('delete')->middleware('isadmin', 'auth');
@@ -30,6 +31,7 @@ Route::post('/', [EventsController::class, 'store'])->name('storeEvent')->middle
 //edit
 Route::get('/edit/{id}', [EventsController::class, 'edit'])->name('editEvent')->middleware('isadmin', 'auth');
 Route::patch('/update/{id}', [EventsController::class, 'update'])->name('updateEvent')->middleware('isadmin', 'auth');
+Route::patch('/feature/{id}', [EventsController::class, 'feature'])->name('feature')->middleware('isadmin', 'auth');
 
 // show
 Route::get('/show/{id}', [EventsController::class, 'show'])->name('showEvent');
