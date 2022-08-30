@@ -10,6 +10,9 @@
     
     <h1 class="text-white fs-2 justify-content-center">@yield('title', 'FIND YOUR SPORTS PARTNER')</h1>
                         <div class="right-header">
+                            @if (Auth::user())
+                            <a href="{{ route('myEvents') }}">My events</a>
+                            @endif
     @guest
                             @if (Route::has('login'))
                                 <li class="nav-item text-white">
