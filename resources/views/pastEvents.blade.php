@@ -7,6 +7,6 @@
 <a href="{{ route('home') }}">Incoming Events</a>
 <p>Past Events</p>
 
-<x-pastEvents :pastEvents="$pastEvents"></x-pastEvents>
+<x-pastEvents :events="$events"></x-pastEvents>
 
 @endsection
