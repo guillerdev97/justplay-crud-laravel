@@ -21,7 +21,7 @@ class EventsController extends Controller
         $events = Event::orderBy('event_date', 'DESC')
             ->paginate(6);
 
-        /* var_dump($events); */
+           
 
         return view('home', compact('events'));
     }
@@ -131,6 +131,18 @@ class EventsController extends Controller
             ->get();
 
         return view('pastEvents', compact('events'));
+    }
+
+    public function myEventsView() {
+        $events = Event::get();
+
+        $eventsOfUser = [];    
+        if (Auth::user()){
+            $user=Auth::user();
+            $eventsOfUser = $user->event;
+        }
+
+        return view('myEvents', compact('events', 'eventsOfUser'));
     }
 
     public function inscribe($id)
