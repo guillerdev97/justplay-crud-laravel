@@ -127,7 +127,8 @@ class EventsController extends Controller
 
     public function getPastEvents() {
         
-        $events = Event::get();
+        $events = Event::orderBy('event_date', 'DESC')
+            ->get();
 
         return view('pastEvents', compact('events'));
     }
