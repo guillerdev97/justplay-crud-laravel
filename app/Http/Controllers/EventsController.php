@@ -126,8 +126,8 @@ class EventsController extends Controller
     // methods
 
     public function getPastEvents() {
-        $events = Event::orderBy('event_date', 'DESC')
-            ->get();
+        
+        $events = Event::get();
 
         $pastEvents = [];
         foreach($events as $event) {
@@ -159,6 +159,13 @@ class EventsController extends Controller
         return redirect()->route('home');
         
     }
+
+    public function feature($id)
+    {
+        Event::where('id', '=', $id)->update(array('carousel' => '1'));
+        return redirect()->route('home');
+    }
+
 }
 
 
