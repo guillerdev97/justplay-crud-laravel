@@ -15,6 +15,7 @@ class Event extends Model
         'img',
         'spaces',
         'event_date',
+        'carousel',
     ];
 
     public function user()

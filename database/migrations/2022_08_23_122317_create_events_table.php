@@ -20,7 +20,8 @@ return new class extends Migration
             $table->string('description', 250);
             $table->string('img');
             $table->integer('spaces');
-            $table->date('event_date'); 
+            $table->date('event_date');
+            $table->boolean('carousel')->default(false);
             
 
             $table->timestamps();

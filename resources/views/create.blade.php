@@ -35,6 +35,12 @@
             <label for="">Spaces</label>
             <input type="text" name="spaces">
         </div>
+        <div class="form-check form-switch sliderCB">
+            <input class="form-check-input" name="carousel" type="checkbox">
+            <label class="form-check-label" for="flexSwitchCheckChecked">Carousel</label>
+        </div>
+
+        
 
         <div class="buttons">
             <div>

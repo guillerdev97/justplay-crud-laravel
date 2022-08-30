@@ -46,11 +46,23 @@ class EventsController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        
-        $event = request()->except('_token');
+        if ($request->carousel != 'on') {
+            $request->carousel = '0';
+        }
+        if ($request->carousel == 'on') {
+            $request->carousel = '1';
+        }
 
-        Event::create($event);
+        $event = request()->except('_token');
+        
+        $event = Event::create([
+            'event_date' => $request->event_date,
+            'title' => $request->title,
+            'description' => $request->description,
+            'img' => $request->img,
+            'carousel' => $request->carousel,
+            'spaces' => $request->spaces
+        ]);
 
         return redirect()->route('home');
     }
