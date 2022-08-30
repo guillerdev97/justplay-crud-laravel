@@ -117,14 +117,7 @@ class EventsController extends Controller
         $events = Event::orderBy('event_date', 'DESC')
             ->get();
 
-        $pastEvents = [];
-        foreach($events as $event) {
-            if($event->event_date < now()) {
-                array_push($pastEvents, $event);
-            }
-        }
-
-        return view('pastEvents', compact('pastEvents'));
+        return view('pastEvents', compact('events'));
     }
 
     public function inscribe($id)
