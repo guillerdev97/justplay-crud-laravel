@@ -23,13 +23,21 @@ class EventsController extends Controller
 
         $events = Event::orderBy('event_date', 'DESC')
             ->paginate(6);
-        
+
         $carouselEvents = Event::get();
 
-           
+      /*   $eventsOfUser = [];
+        if (Auth::user()) {
+            $user = Auth::user();
+            $eventsOfUser = $user->event;
+        }
 
+        $events = Event::isInscribed($events, $eventsOfUser); */
+ 
         return view('home', compact('events', 'carouselEvents'));
     }
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -59,7 +67,7 @@ class EventsController extends Controller
         }
 
         $event = request()->except('_token');
-        
+
         $event = Event::create([
             'event_date' => $request->event_date,
             'title' => $request->title,
@@ -124,26 +132,28 @@ class EventsController extends Controller
      */
     public function destroy($id)
     {
-       Event::destroy($id);
-       return redirect()->route('home');
+        Event::destroy($id);
+        return redirect()->route('home');
     }
 
     // methods
 
-    public function getPastEvents() {
-        
+    public function getPastEvents()
+    {
+
         $events = Event::orderBy('event_date', 'DESC')
             ->get();
 
         return view('pastEvents', compact('events'));
     }
 
-    public function myEventsView() {
+    public function myEventsView()
+    {
         $events = Event::get();
 
-        $eventsOfUser = [];    
-        if (Auth::user()){
-            $user=Auth::user();
+        $eventsOfUser = [];
+        if (Auth::user()) {
+            $user = Auth::user();
             $eventsOfUser = $user->event;
         }
 
@@ -152,27 +162,34 @@ class EventsController extends Controller
 
     public function inscribe($id)
     {
-        $user = User::find(Auth::id());
-        $event = Event::find($id);
+        $userId = auth()->id();
+        $user = User::find($userId);
+        $userEvents = $user->event()->find($id);
+       
+        if($userEvents == null) {
+            $user->event()->attach($id);
+            $event = Event::find($id);
+            return view('congrats');
+        }
 
-        $user->event()->attach($event);
-
-       /*  $mail = new InscriptionMailable();
+        if($userEvents != null) {
+              return view('inscribed'); 
+        }
+       
+        /*  $mail = new InscriptionMailable();
         Mail::to('mailtrap@gmail.com')->send($mail); */
-      
-
-        return redirect()->route('home');
     }
+
+
 
     public function cancelInscription($id)
     {
         $user = User::find(Auth::id());
         $event = Event::find($id);
-        
+
         $user->event()->detach($event);
-        
+
         return redirect()->route('home');
-        
     }
 
     public function feature($id)
@@ -180,7 +197,4 @@ class EventsController extends Controller
         Event::where('id', '=', $id)->update(array('carousel' => '1'));
         return redirect()->route('home');
     }
-
 }
-
-
