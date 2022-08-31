@@ -8,7 +8,7 @@
     </div> 
     </a>   
     
-    <h1 class="text-white fs-2 justify-content-center">@yield('title', 'FIND YOUR SPORTS PARTNER')</h1>
+    <h1 class="text-white fs-2 justify-content-center find">@yield('title', 'FIND YOUR SPORTS PARTNER')</h1>
                         <div class="right-header">
                             @if (Auth::user())
                             <a href="{{ route('myEvents') }}">My events</a>
