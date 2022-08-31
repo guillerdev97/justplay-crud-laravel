@@ -6,6 +6,21 @@
     height: 72vh;
     margin: 10px auto;
 
+   font-family: 'Bebas Neue' !important;
+   
+        
+  
+
+    @media (max-width: 900px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 95%;
+        height: auto;
+        margin: 10px auto;
+    }
+
     .leftSide {
         display: flex;
         flex-direction: column;
@@ -14,14 +29,37 @@
         width:55%;
         height: 68vh;
 
+        @media (max-width: 900px) {
+            width:70%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        @media (max-width: 600px) {
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+        }
+
         .problemBox {
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
+            justify-content: center;
 
-            #problemLabel {
+            /* #problemLabel {
                 margin-bottom: 32px;
-            }
+            } */
+           /*  @media (max-width: 900px) {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            } */
 
             #title {
                 font-size: 20px;
@@ -32,7 +70,11 @@
         div {
             width: 85%;
             height: 22vh;
-
+            
+            @media (max-width: 900px) {
+                text-align: center;
+                
+            }
             label {
                 font-size: 24px;
                 letter-spacing: 1px;
@@ -48,6 +90,13 @@
                 font-size: 20px;
                 text-align: center;
                 transition: all .2s ease;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                
+                @media (max-width: 900px) {
+                    margin: auto;
+                }
             }
 
             input:hover {
@@ -69,6 +118,10 @@
             overflow: auto !important;
             font-size: 20px;
             transition: all .2s ease;
+
+            @media (max-width: 900px) {
+                margin: auto;
+            }
         }
         .textarea:hover {
             background-color: rgb(220, 220, 220);
@@ -86,6 +139,28 @@
         width: 40%;
         height: 67vh;
 
+        @media (max-width: 900px) {
+            width:70%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+
+           
+        }
+
+        @media (max-width: 600px) {
+            width:100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+
+            margin-bottom: 20px;
+        }
+
         .imageBox {
             display: flex;
             flex-direction: column;
@@ -99,12 +174,30 @@
             input {
                 margin-top: 4px;
             }
+
+            @media (max-width: 900px) {
+                margin-bottom: 30px;
+            }
         }
 
         img {
             width:65%;
             height: 32vh;
             border-radius: 5px;
+
+            @media (max-width: 1100px) {
+                height: 28vh;
+            }
+            @media (max-width: 1000px) {
+                height: 25vh;
+            }
+            @media (max-width: 900px) {
+                height: 24vh;
+            }
+
+            @media (max-width: 900px) {
+                margin-bottom: 30px;
+            }
         }
 
         div {
@@ -125,6 +218,16 @@
             }
         }
 
+        .flexCarousel {
+            width: 70%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+
+           
+        }
+
         .spaces {
             display: flex;
             justify-content: space-around;
@@ -132,11 +235,40 @@
             width: 35%;
 
             label {
-                font-size: 22px;
+                font-size: 20px;
             }
             input {
-                width: 35% !important;
+                width: 60% !important;
                 text-align: center;
+
+                @media (max-width: 1100px) {
+                    width: 55% !important;
+                    height: 50% !important;
+                }
+                @media (max-width: 1000px) {
+                    width: 50% !important;
+                    height: 45% !important;
+                }
+                @media (max-width: 900px) {
+                    width: 45% !important;
+                    height: 40% !important;
+                }
+
+                @media (max-width: 900px) {
+                    margin-bottom: 30px;
+                }
+            }
+        }
+
+        #carousel {
+            
+            input {
+                width: 40%;
+                margin-left: -40px;
+                /* height: 40%; */
+            }
+            label {
+                font-size: 20px;
             }
         }
 
@@ -148,3 +280,6 @@
         }
     }
 }
+
+
+

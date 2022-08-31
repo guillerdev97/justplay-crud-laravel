@@ -19,19 +19,6 @@ class Event extends Model
         'carousel',
     ];
 
-   /*  static function isInscribed($events, $eventsOfUser)
-    {
-            foreach ($events as $event) {
-                foreach ($eventsOfUser as $eventOfUser) {
-                    if ($event->id === $eventOfUser->id) {
-                        $event->isInscribed = '1';
-                    }
-              } 
-            }
-
-            return $events;
-    } */
-
     public function user()
     {
         return $this->belongsToMany(User::class);

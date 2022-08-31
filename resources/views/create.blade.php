@@ -8,7 +8,7 @@
     @csrf
     <div class="leftSide">
         <div class="problemBox">
-            <label id="problemLabel"  for="title">Event name</label>
+            <label id="problemLabel" for="title">Event name</label>
             <input type="text" name="title" id="title">
         </div>
 
@@ -31,16 +31,19 @@
 
         <img src="https://mejorconsalud.as.com/wp-content/uploads/2018/06/saludo-sol-yoga.jpg" alt="">
 
-        <div class="spaces">
-            <label for="">Spaces</label>
-            <input type="text" name="spaces">
-        </div>
-        <div class="form-check form-switch sliderCB">
-            <input class="form-check-input" name="carousel" type="checkbox">
-            <label class="form-check-label" for="flexSwitchCheckChecked">Carousel</label>
+        <div class="flexCarousel">
+            <div class="spaces">
+                <label for="">Spaces</label>
+                <input type="text" name="spaces">
+            </div>
+            <div id="carousel" class="form-check form-switch sliderCB">
+                <label class="form-check-label" for="flexSwitchCheckChecked">Carousel</label>
+                <input class="form-check-input" name="carousel" type="checkbox">
+
+            </div>
         </div>
 
-        
+
 
         <div class="buttons">
             <div>
