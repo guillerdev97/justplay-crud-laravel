@@ -23,10 +23,12 @@ class EventsController extends Controller
 
         $events = Event::orderBy('event_date', 'DESC')
             ->paginate(6);
+        
+        $carouselEvents = Event::get();
 
            
 
-        return view('home', compact('events'));
+        return view('home', compact('events', 'carouselEvents'));
     }
 
     /**

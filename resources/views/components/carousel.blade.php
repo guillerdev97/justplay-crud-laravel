@@ -3,7 +3,7 @@
     <!-- Carousel wrapper -->
     <div class="relative h-56 overflow-hidden rounded-lg md:h-96" id="slider">
       
-      @foreach ($events as $event)
+      @foreach ($carouselEvents as $event)
       @if($event->carousel == 1)
         <figure class="duration-700 ease-in-out absolute inset-0 transition-all transform -translate-x-full z-10" data-carousel-item="">
             <a href="{{ route('showEvent', $event->id) }}">

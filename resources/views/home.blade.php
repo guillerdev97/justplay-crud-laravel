@@ -4,7 +4,7 @@
 
 <h2 class="text-center">Eventos destacados</h2>
 
-<x-carousel :events="$events"></x-carousel>
+<x-carousel :carouselEvents="$carouselEvents"></x-carousel>
 
 @if(Auth::check() && Auth::user()->isAdmin)
 <a href="{{ route('createEvent') }}"><button class="btn btn-primary" >Add new event</button></a>
