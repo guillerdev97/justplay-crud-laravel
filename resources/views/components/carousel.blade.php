@@ -1,5 +1,5 @@
 <!--Carrousel-->
-<div id="controls-carousel" class="relative m-4" data-carousel="slide">
+<div id="controls-carousel" class="relative m-10" data-carousel="slide">
     <!-- Carousel wrapper -->
     <div class="relative h-56 overflow-hidden rounded-lg md:h-96" id="slider">
       
@@ -7,13 +7,13 @@
       @if($event->carousel == 1)
         <figure class="duration-700 ease-in-out absolute inset-0 transition-all transform -translate-x-full z-10" data-carousel-item="">
             <a href="{{ route('showEvent', $event->id) }}">
-              <img src="{{ $event->img }}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+              <img src="{{ $event->img }}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 p-0" alt="...">
             </a>
-            <figcaption class="absolute w-full bottom-6 px-4 text-lg text-white">
-              <h4>{{ $event->title }}</h4>
+            <figcaption class="absolute w-full bottom-6 px-4 text-xl text-white">
+              <h2 class="text-2xl ml-8">{{ $event->title }}</h2>
               <div class="flex w-full justify-between">
-                <p>{{ $event->event_date }}</p>
-                <p>{{ $event->spaces }} cupos</p>
+                <p class="ml-8">{{ $event->event_date }}</p>
+                <p class="mr-8">{{ $event->spaces }} cupos</p>
               </div>
             </figcatpion>
         </figure>
