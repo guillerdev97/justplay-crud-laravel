@@ -25,14 +25,6 @@ class EventsController extends Controller
             ->paginate(6);
 
         $carouselEvents = Event::get();
-
-      /*   $eventsOfUser = [];
-        if (Auth::user()) {
-            $user = Auth::user();
-            $eventsOfUser = $user->event;
-        }
-
-        $events = Event::isInscribed($events, $eventsOfUser); */
  
         return view('home', compact('events', 'carouselEvents'));
     }

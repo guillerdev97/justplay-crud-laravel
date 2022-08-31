@@ -17,7 +17,6 @@ class Event extends Model
         'spaces',
         'event_date',
         'carousel',
-        'isInscribed'
     ];
 
    /*  static function isInscribed($events, $eventsOfUser)

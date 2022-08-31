@@ -22,7 +22,6 @@ return new class extends Migration
             $table->integer('spaces');
             $table->date('event_date');
             $table->boolean('carousel')->default(false);
-            $table->boolean('isInscribed')->default(false);
 
             $table->timestamps();
         });
