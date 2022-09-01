@@ -5,7 +5,7 @@
       
       @foreach ($carouselEvents as $event)
       @if($event->carousel == 1)
-        <figure class="duration-700 ease-in-out absolute inset-0 transition-all transform -translate-x-full z-10" data-carousel-item="">
+        <figure class="duration-1500 ease-in-out absolute inset-0 transition-all transform -translate-x-full z-10" data-carousel-item="">
             <a href="{{ route('showEvent', $event->id) }}">
               <img src="{{ $event->img }}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 p-0" alt="...">
             </a>

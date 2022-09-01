@@ -149,13 +149,24 @@ class EventsController extends Controller
             $eventsOfUser = $user->event;
         }
 
-        return view('myEvents', compact('events', 'eventsOfUser'));
+        return view('myEvents', compact('eventsOfUser'));
+    }
+
+    public function getMyPastEvents() {
+        $events = Event::get();
+
+        $eventsOfUser = [];
+        if (Auth::user()) {
+            $user = Auth::user();
+            $eventsOfUser = $user->event;
+        }
+
+        return view('myPastEvent', compact('eventsOfUser'));
     }
 
     public function inscribe($id)
     {
-        $userId = auth()->id();
-        $user = User::find($userId);
+        $user = User::find(Auth::id());
         $userEvents = $user->event()->find($id);
        
         if($userEvents == null) {
