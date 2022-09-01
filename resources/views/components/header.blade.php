@@ -10,7 +10,7 @@
     
     <h1 class="text-white fs-2 justify-content-center find">@yield('title', 'FIND YOUR SPORTS PARTNER')</h1>
                         <div class="right-header">
-                            @if (Auth::user())
+                            @if (Auth::check() && ! Auth::user()->isAdmin)
                             <a href="{{ route('myEvents') }}">My events</a>
                             @endif
     @guest
