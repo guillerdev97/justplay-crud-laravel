@@ -19,18 +19,17 @@
         <img class="object-cover w-full h-200 rounded-t-sm ms:h-auto sm:w-48 sm:rounded-none md:rounded-none sm" src="https://cdn.pixabay.com/photo/2013/03/21/15/52/basketball-95607_1280.jpg" alt="Event Image">
 
       <div class="flex flex-col justify-between p-4 leading-normal max-w-screen-md">
-        <div class="max-w-screen-sm flex justify-between items-center w-screen bg-green-200 p-2 mt-4 title">
+        <div class="max-w-screen-sm flex justify-between items-center w-screen bg-gray-400 p-2 mt-4 title">
           <h5 class="w-full text-xl font-bold tracking-tight text-gray-900 dark:text-white uppercase">{{$event->title}}</h5>
-          <button type="submit" class="w-1/3 text-xs p-1 border-4 font-bold border-white text-red-600" id="unsubscribebutton">UNSUBSCRIBE</button>
         </div>
-        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 bg-gray-200 p-2 ">{{ $event->description }} </p>
+          <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 bg-gray-200 p-2 ">{{ $event->description }} </p>
       </div>
 
       <div class="flex flex-center px-10 spaces  ">
-        <p>Places</p>
-        <p class="border border-black rounded-xl bg-gray-200 px-4 my-3 ">{{$event->spaces}}</p>
+        <p>Attendees</p>
+        <p class="border border-black rounded-xl bg-gray-200 px-4 my-3 ">{{$event->attendees}}</p>
       </div>
-      </a>
+    </a>
     @endforeach
   </div>
 @endsection
