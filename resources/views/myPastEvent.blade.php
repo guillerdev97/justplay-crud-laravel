@@ -20,9 +20,9 @@
 
     <div id="paragraph" class="flex flex-col justify-between p-4 leading-normal max-w-screen-md">
       <div class="max-w-screen-sm flex justify-between items-center w-screen bg-gray-400 p-2 mt-4 title">
-        <h5 class="w-full text-xl font-bold tracking-tight text-gray-900 dark:text-white uppercase">{{$eventOfUser->title}}</h5>
+        <h5 class="w-full text-xl font-bold tracking-tight text-gray-900  uppercase">{{$eventOfUser->title}}</h5>
       </div>
-      <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 bg-gray-200 p-2 "> {{ $eventOfUser->description }}</p>
+      <p class="mb-3 font-normal text-gray-700  bg-gray-200 p-2 "> {{ $eventOfUser->description }}</p>
     </div>
 
     <div id="spaces" class="flex flex-center px-10">
