@@ -170,8 +170,11 @@ class EventsController extends Controller
         $userEvents = $user->event()->find($id);
        
         if($userEvents == null) {
+            
             $user->event()->attach($id);
             $event = Event::find($id);
+           /*  $mail = new InscriptionMailable(); */
+           /*  Mail::to('mailtrap@gmail.com')->send($mail);  */
             return view('congrats');
         }
 
@@ -179,8 +182,7 @@ class EventsController extends Controller
               return view('inscribed'); 
         }
        
-        /*  $mail = new InscriptionMailable();
-        Mail::to('mailtrap@gmail.com')->send($mail); */
+        
     }
 
 

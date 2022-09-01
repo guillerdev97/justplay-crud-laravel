@@ -19,11 +19,12 @@
       <p class="mb-1  text-black-700 dark:text-black-400">{{ $event->event_date }}</p>
       <p class="mb-1  text-black-700 dark:text-black-400">{{ $event->spaces }} cupos</p>
       <div class="d-flex">
+      @if(!Auth::user()->event->contains($event->id))
         <a href="{{ route('inscribe', $event->id) }}" class="me-auto items-center py-2 px-3 ml-2 text-sm font-medium text-center text-white bg-red-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600 dark:hover:bg-blue-700 dark:focus:ring-red-800">
           Subscribe
         </a>
-
-        @if(Auth::check() && Auth::user()->isInscribe == 1)
+      @endif
+        @if(Auth::user()->event->contains($event->id))
           <a href="{{ route('cancelInscription', $event->id) }}" class="me-auto items-center py-2 px-3 ml-2 text-sm font-medium text-center text-white bg-red-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600 dark:hover:bg-blue-700 dark:focus:ring-red-800">
                 Unsubscribe
           </a>
