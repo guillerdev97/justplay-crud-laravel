@@ -2,7 +2,7 @@
 
 @section('content')
 <section class="m-10 grid justify-items-center text-3xl">
-  <h2 class="text-center ">WHAT IS COMMING!</h2>
+  <h2 class="text-center ">WHAT IS COMING!</h2>
   <div class="bg-red-600 h-1 w-20"></div>
 </section>
 

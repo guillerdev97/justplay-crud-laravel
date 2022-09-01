@@ -18,9 +18,12 @@ Auth::routes();
 
 Route::get('/', [EventsController::class, 'index']);
 Route::get('/home', [EventsController::class, 'index'])->name('home');
+// Route to access past events in general
 Route::get('/past', [EventsController::class, 'getPastEvents'])->name('pastEvents');
-Route::get('myevents', [EventsController::class, 'myEventsView'])->name('myEvents');
-
+// Route to access current events of the user
+Route::get('/myevents', [EventsController::class, 'myEventsView'])->name('myEvents');
+// Route to access past events of the user
+Route::get('/mypastevents', [EventsController::class, 'getMyPastEvents'])->name('myPastEvents');
 // delete
 Route::delete('/delete/{id}', [EventsController::class, 'destroy'])->name('delete')->middleware('isadmin', 'auth');
 
