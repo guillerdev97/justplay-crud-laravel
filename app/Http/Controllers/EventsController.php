@@ -29,8 +29,6 @@ class EventsController extends Controller
         return view('home', compact('events', 'carouselEvents'));
     }
 
-
-
     /**
      * Show the form for creating a new resource.
      *
@@ -51,6 +49,7 @@ class EventsController extends Controller
      */
     public function store(Request $request)
     {
+
         if ($request->carousel != 'on') {
             $request->carousel = '0';
         }
@@ -81,6 +80,7 @@ class EventsController extends Controller
     public function show($id)
     {
         //
+
         $event = Event::find($id);
 
         return view('show', compact('event'));
@@ -95,6 +95,7 @@ class EventsController extends Controller
     public function edit($id)
     {
         //
+
         $event = Event::find($id);
 
         return view('edit', compact('event'));
@@ -110,6 +111,7 @@ class EventsController extends Controller
     public function update(Request $request, $id)
     {
         //
+
         $event = request()->except('_token', '_method');
         Event::where('id', '=', $id)->update($event);
 
@@ -124,11 +126,14 @@ class EventsController extends Controller
      */
     public function destroy($id)
     {
+
         Event::destroy($id);
         return redirect()->route('home');
     }
 
-    // methods
+    // METHODS
+
+    // TO GET PAST EVENTS IN GENERAL
 
     public function getPastEvents()
     {
@@ -138,6 +143,8 @@ class EventsController extends Controller
 
         return view('pastEvents', compact('events'));
     }
+
+    // TO GET PAST EVENTS OF THE USER
 
     public function myEventsView()
     {
@@ -152,6 +159,7 @@ class EventsController extends Controller
         return view('myEvents', compact('eventsOfUser'));
     }
 
+    // TO GET PAST EVENTS OF THE USER
     public function getMyPastEvents() {
         $events = Event::get();
 
@@ -164,23 +172,25 @@ class EventsController extends Controller
         return view('myPastEvent', compact('eventsOfUser'));
     }
 
+    // TO INSCRIBE
     public function inscribe($id)
     {
+        $event = Event::find($id);
+        $totalUsersOfEvent = $event->user();
         $user = User::find(Auth::id());
         $userEvents = $user->event()->find($id);
        
-        if($userEvents == null) {
-            $user->event()->attach($id);
-            $event = Event::find($id);
-            return view('congrats');
+        
+        if($totalUsersOfEvent->count() >= $event->spaces) {
+            return view('sorry');
         }
-
-        if($userEvents != null) {
-              return view('inscribed'); 
-        }
+        $user->event()->attach($id);
+        $event = Event::find($id);
+        /*  $mail = new InscriptionMailable(); */
+        /*  Mail::to('mailtrap@gmail.com')->send($mail);  */
+        return view('congrats');
        
-        /*  $mail = new InscriptionMailable();
-        Mail::to('mailtrap@gmail.com')->send($mail); */
+        
     }
 
 
@@ -195,6 +205,7 @@ class EventsController extends Controller
         return redirect()->route('home');
     }
 
+    // CAROUSEL
     public function feature($id)
     {
         Event::where('id', '=', $id)->update(array('carousel' => '1'));

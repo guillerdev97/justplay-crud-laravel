@@ -105,5 +105,4 @@ class CrudTest extends TestCase
         $this->assertEquals('New Name', Event::first()->title);
     }
     
-    
 }
