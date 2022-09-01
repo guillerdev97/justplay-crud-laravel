@@ -16,13 +16,13 @@
     @guest
                             @if (Route::has('login'))
                                 <li class="nav-item text-white">
-                                    <a class="nav-link" href="{{ route('login') }}"><img src="{{URL::asset('/img/register.png')}}" /></a>
+                                    <a class="nav-link" href="{{ route('register') }}"><img src="{{URL::asset('/img/register.png')}}" /></a>
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
                                 <li class="nav-item text-white">
-                                    <a class="nav-link" href="{{ route('register') }}"><img src="{{URL::asset('/img/login.png')}}" /></a>
+                                    <a class="nav-link" href="{{ route('login') }}"><img src="{{URL::asset('/img/login.png')}}" /></a>
                                 </li>
                             @endif
                         @else
