@@ -105,18 +105,4 @@ class CrudTest extends TestCase
         $this->assertEquals('New Name', Event::first()->title);
     }
     
-    //show test
-    public function test_an_event_appear_in_show_page(){
-        
-        $this->withExceptionHandling();
-
-        $event = Event::factory()->create();
-        
-        // $response = $this->get('/show/{id}');
-        $response = $this->get(route('showEvent', $event->id));
-        $response->assertStatus(200)
-            ->assertViewIs('show');
-        
-        $response->assertSee($event->name);
-    }
 }
