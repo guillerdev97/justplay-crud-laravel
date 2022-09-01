@@ -30,12 +30,12 @@ class DatabaseSeeder extends Seeder
         Event::factory()->create(['title' => 'JS Webinar', 'description' => 'Learn by doing with our JS game', 'img' => 'https://via.placeholder.com/640x480.png/00ff44?text=commodi', 'spaces' => 14, 'event_date' => '2024-11-09']);
         Event::factory()->create(['title' => 'JS Webinar', 'description' => 'Learn by doing with our JS game', 'img' => 'https://via.placeholder.com/640x480.png/00ff44?text=commodi', 'spaces' => 14, 'event_date' => '2024-11-09']);
         Event::factory()->create(['title' => 'JS Webinar', 'description' => 'Learn by doing with our JS game', 'img' => 'https://via.placeholder.com/640x480.png/00ff44?text=commodi', 'spaces' => 14, 'event_date' => '2024-11-09']);
-        Event::factory()->create(['title' => 'JS Webinar', 'description' => 'Learn by doing with our JS game', 'img' => 'https://via.placeholder.com/640x480.png/00ff44?text=commodi', 'spaces' => 14, 'event_date' => '2024-11-09']);
+        Event::factory()->create(['title' => 'Spaces', 'description' => 'Learn by doing with our JS game', 'img' => 'https://via.placeholder.com/640x480.png/00ff44?text=commodi', 'spaces' => 1, 'event_date' => '2024-11-09']);
         
         Event::factory(10)->create();
         User::factory()->create(['name'=>'admin', 'email'=>'admin@admin.com', 'isAdmin'=>true]);
         User::factory()->create(['name'=>'user1', 'email'=>'user1@user1.com', 'isAdmin'=>false]);
-        
+        User::factory()->create(['name'=>'user2', 'email'=>'user2@user2.com', 'isAdmin'=>false]);
         /* Event::factory()
             ->has(User::factory()->count(20))
             ->create();

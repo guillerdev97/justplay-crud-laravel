@@ -166,11 +166,15 @@ class EventsController extends Controller
 
     public function inscribe($id)
     {
+        $event = Event::find($id);
+        $totalUsersOfEvent = $event->user();
         $user = User::find(Auth::id());
         $userEvents = $user->event()->find($id);
        
         if($userEvents == null) {
-            
+            if($totalUsersOfEvent->count() >= $event->spaces) {
+                return view('sorry');
+            }
             $user->event()->attach($id);
             $event = Event::find($id);
            /*  $mail = new InscriptionMailable(); */
