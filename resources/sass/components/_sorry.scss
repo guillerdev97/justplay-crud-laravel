@@ -4,11 +4,10 @@
     display: flex;
     justify-content: center;
     font-size: 60px;
-    font-family: 'Bebas Neue' !important
-  
+    font-family: 'Bebas Neue' !important;
+    p{
+        text-align: center;
+        font-size: 32px;
+    }
 }
 
-p{
-    text-align: center;
-    font-size: 32px;
-}
