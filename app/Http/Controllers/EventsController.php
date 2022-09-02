@@ -186,8 +186,10 @@ class EventsController extends Controller
         }
         $user->event()->attach($id);
         $event = Event::find($id);
-       /*  $mail = new InscriptionMailable(); 
-         Mail::to('mailtrap@gmail.com')->send($mail);  */
+        $username = $user->name;
+        $mail = new InscriptionMailable($username, $event); 
+         Mail::to($user->email)->send($mail); 
+
         return view('congrats', compact('event'));
        
         
