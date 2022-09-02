@@ -126,7 +126,6 @@ class EventsController extends Controller
      */
     public function destroy($id)
     {
-
         Event::destroy($id);
         return redirect()->route('home');
     }
