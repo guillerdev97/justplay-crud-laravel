@@ -2,11 +2,9 @@
 
 @section('content')
 
-
-    
-<h2 class="congrats-message" style="font-size: 60px;">
+<h2 class="congrats-message">
     Congrats! You are subscribed to {{ $event->title }} event!
 </h2>
-<p style="text-align: center; font-size: 32px;">Date: {{ $event->event_date }}</p>
+<p> Date: {{ $event->event_date }}</p>
 
 @endsection
