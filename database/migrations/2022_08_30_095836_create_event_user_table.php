@@ -16,10 +16,12 @@ return new class extends Migration
         Schema::create('event_user', function (Blueprint $table) {
             $table->id();
 
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->unsignedBigInteger('event_id');
-            $table->foreign('event_id')->references('id')->on('events');
+            $table->unsignedBigInteger('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users')
+                -> onDelete('cascade');
+            $table->unsignedBigInteger('event_id')->unsigned();
+            $table->foreign('event_id')->references('id')->on('events')
+                ->onDelete('cascade');
 
             $table->timestamps();
         });
