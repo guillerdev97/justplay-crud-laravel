@@ -175,6 +175,7 @@ class EventsController extends Controller
     // TO INSCRIBE
     public function inscribe($id)
     {
+       /*  $events = Event::get(); */
         $event = Event::find($id);
         $totalUsersOfEvent = $event->user();
         $user = User::find(Auth::id());
@@ -186,9 +187,9 @@ class EventsController extends Controller
         }
         $user->event()->attach($id);
         $event = Event::find($id);
-        $mail = new InscriptionMailable(); 
-         Mail::to('mailtrap@gmail.com')->send($mail); 
-        return view('congrats');
+       /*  $mail = new InscriptionMailable(); 
+         Mail::to('mailtrap@gmail.com')->send($mail);  */
+        return view('congrats', compact('event'));
        
         
     }
