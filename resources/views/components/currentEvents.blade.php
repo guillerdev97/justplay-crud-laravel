@@ -1,6 +1,12 @@
 <div id="box" class="grid md:grid-cols-3 justify-items-center m-2">
   @foreach ($events as $event)
   @if ($event->event_date > now())
+  <?php
+  $eventSpaces = $event->spaces;
+  $numberOfUsers = count($event->user);
+  $currentSpaces = $eventSpaces - $numberOfUsers;
+
+  ?>
   <div class="max-w-xs m-4 bg-white rounded-lg border border-gray-200 shadow-md  dark:border-gray-700">
     <div class="relative">
       <a href="{{ route('showEvent', $event->id) }}">
@@ -17,13 +23,16 @@
         <h2 class="mb-2 text-2xl tracking-tight text-gray-900 dark:text-black">{{ $event->title }}</h2>
       </a>
       <p class="mb-1  text-black-700 dark:text-black-400">{{ $event->event_date }}</p>
-      <p class="mb-1  text-black-700 dark:text-black-400">{{ $event->spaces }} cupos</p>
+      <p class="mb-1  text-black-700 dark:text-black-400">Quedan {{ $currentSpaces }} cupos</p>
       <div class="d-flex">
-      @if(!Auth::user() || (Auth::check() && !Auth::user()->event->contains($event->id)))
+      @if(($currentSpaces > 0 && !Auth::user()) || (Auth::check() && !Auth::user()->event->contains($event->id)))
         <a href="{{ route('inscribe', $event->id) }}" class="me-auto items-center py-2 px-3 ml-2 text-sm font-medium text-center text-white bg-red-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600 dark:hover:bg-blue-700 dark:focus:ring-red-800">
           Subscribe
         </a>
       @endif
+      @if($currentSpaces == 0)
+        Completed
+        @endif
         @if(Auth::check() && Auth::user()->event->contains($event->id))
           <a href="{{ route('cancelInscription', $event->id) }}" class="me-auto items-center py-2 px-3 ml-2 text-sm font-medium text-center text-white bg-red-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600 dark:hover:bg-blue-700 dark:focus:ring-red-800">
                 Unsubscribe
