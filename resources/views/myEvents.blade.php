@@ -4,6 +4,19 @@
 
 @section('content')
 
+<?php
+
+$currentEvents = [];
+foreach($eventsOfUser as $eventOfUser) {
+  if($eventOfUser->event_date > now()) {
+    array_push($currentEvents, $eventOfUser);
+  }
+}
+$countEventsUser = count($currentEvents);
+?>
+
+<p>You are subscribed to {{ $countEventsUser }} at this moment.</p>
+
 <div class="my_events_page inline-flex mx-2 ">
   <div class="My Events  ml-0 mr-20 p-3 hover:font-bold">
     <button type="button">My Events</button>
