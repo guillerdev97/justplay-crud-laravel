@@ -161,7 +161,8 @@ class EventsController extends Controller
     // TO GET PAST EVENTS OF THE USER
     public function getMyPastEvents() {
         $events = Event::get();
-
+           
+        
         $eventsOfUser = [];
         if (Auth::user()) {
             $user = Auth::user();
@@ -186,9 +187,9 @@ class EventsController extends Controller
         }
         $user->event()->attach($id);
         $event = Event::find($id);
-        $username = $user->name;
-        $mail = new InscriptionMailable($username, $event); 
-         Mail::to($user->email)->send($mail); 
+      /*   $username = $user->name; */
+       /*  $mail = new InscriptionMailable($username, $event); 
+         Mail::to($user->email)->send($mail);  */
 
         return view('congrats', compact('event'));
        
