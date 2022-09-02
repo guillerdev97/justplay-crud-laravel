@@ -2,6 +2,8 @@
 
 @section('content')
 
-Congrats! You are subscribed!
+<h1 class="congrats-message">
+    Congrats! You are subscribed to event.
+</h1>
 
 @endsection
